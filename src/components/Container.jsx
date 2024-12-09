@@ -7,7 +7,9 @@ const Container = () => {
     const [todos, setTodos] = useState([]);
     const [showCompletedTodos, setShowCompletedTodos] = useState(true);
 
-
+    useEffect(() => {
+        document.title = `You have ${todos.length} todos`;
+    }, [todos]);
     useEffect(() => {
         const defaultTodos = [
 
@@ -17,6 +19,8 @@ const Container = () => {
             { text: 'React', isCompleted: true },
             { text: 'Node.js', isCompleted: true },
             { text: 'Express.js', isCompleted: true },
+            { text: 'Python', isCompleted: true },
+            { text: 'Java', isCompleted: true },
             { text: 'MongoDB', isCompleted: true },
             { text: 'GraphQL', isCompleted: true },
             { text: 'TypeScript', isCompleted: true },

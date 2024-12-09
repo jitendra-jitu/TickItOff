@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <div className='flex items-center justify-center min-h-screen bg-violet-50 w-full xl:w-[100vw]'>
-        <div className='w-full  md:w-4/6'>
+        <div className='w-full  md:w-7/12'>
           <Navbar/>
           <Container/>
         </div>

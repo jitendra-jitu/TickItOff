@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const AddTodo = ({ handleInput, todo, handleAddTodo, toggleShowCompleted, showCompletedTodos }) => {
+const AddTodo = ({ handleInput, todo, handleAddTodo = () => {}, toggleShowCompleted, showCompletedTodos }) => {
     return (
         <div>
             <div className='add-todo mb-6'>
@@ -13,12 +13,16 @@ const AddTodo = ({ handleInput, todo, handleAddTodo, toggleShowCompleted, showCo
                         placeholder='Enter your todo...'
                         className='border-2 border-gray-300 py-2 px-5 rounded-lg w-full xl:w-[20vw] mb-4 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all duration-200 ease-in-out'
                 />
-                <button
-                        onClick={handleAddTodo}
-                        className='bg-blue-600 text-white py-2 px-5 rounded-lg w-full xl:w-[10vw] hover:bg-white hover:text-blue-600 transition-all duration-300 ease-in-out shadow-md'
-                >
-                        Add
-                </button>
+
+                <div className='flex justify-center md:justify-start'>
+                    <button
+                            onClick={handleAddTodo}
+                            className='bg-blue-600 text-white py-2 px-5 rounded-lg w-[50vw] xl:w-[10vw] hover:bg-white hover:text-blue-600 transition-all duration-300 ease-in-out shadow-md'
+                    >
+                            Add
+                    </button>
+                </div>
+
             </div>
 
             <hr />
@@ -35,6 +39,9 @@ const AddTodo = ({ handleInput, todo, handleAddTodo, toggleShowCompleted, showCo
                 Show Completed Todos
             </label>
 
+            <div className={`${showCompletedTodos ? '' : 'hidden'}`}>
+                {/* Completed todos will be displayed here */}
+            </div>
         </div>
     )
 }
